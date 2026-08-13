@@ -1,0 +1,65 @@
+.backdrop {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+  background: rgb(25 29 24 / 58%);
+}
+
+.dialog {
+  width: min(100%, 32rem);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-panel);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-dialog);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.description {
+  margin: var(--space-3) 0 0;
+  color: var(--color-muted);
+  line-height: 1.55;
+}
+
+.close {
+  display: inline-grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  color: var(--color-ink-soft);
+  background: transparent;
+  cursor: pointer;
+}
+
+.close:hover {
+  border-color: var(--color-line-strong);
+  background: var(--color-canvas-quiet);
+}
+
+.close svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.content {
+  margin-top: var(--space-6);
+}

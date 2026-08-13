@@ -1,0 +1,377 @@
+.screen {
+  width: min(100% - clamp(2rem, 5vw, 5rem), 92rem);
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 5vw, 5rem);
+}
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.52fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+}
+.eyebrow,
+.sectionIndex {
+  margin: 0 0 var(--space-3);
+  color: var(--color-accent-strong);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 6vw, 5.5rem);
+  font-weight: 650;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+.description {
+  max-width: 48rem;
+  margin: var(--space-5) 0 0;
+  color: var(--color-ink-soft);
+  font-size: var(--text-lg);
+}
+.fileSummary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-4);
+  padding-block: var(--space-5);
+  border-block: 1px solid var(--color-line-strong);
+}
+.fileSummary svg {
+  color: var(--color-accent);
+}
+.fileSummary strong,
+.fileSummary span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fileSummary span {
+  margin-top: var(--space-1);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+.preview,
+.rulesSection {
+  margin-top: clamp(3rem, 7vw, 6rem);
+}
+.sectionHeading {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-5);
+  align-items: end;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-line-strong);
+}
+.sectionHeading h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+}
+.sectionHeading > span {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+.tableScroller {
+  overflow-x: auto;
+  border-bottom: 1px solid var(--color-line-strong);
+}
+.tableScroller:focus-visible {
+  outline-offset: -0.1875rem;
+}
+.tableScroller table {
+  width: 100%;
+  min-width: 44rem;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+.tableScroller th,
+.tableScroller td {
+  max-width: 18rem;
+  padding: var(--space-3) var(--space-4);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tableScroller thead th {
+  color: var(--color-muted);
+  background: var(--color-canvas-quiet);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.tableScroller tbody th {
+  width: 3rem;
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+.empty {
+  color: var(--color-muted);
+  font-style: italic;
+}
+.ruleWorkbench {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.36fr) minmax(0, 1fr);
+  min-height: 38rem;
+  border-bottom: 1px solid var(--color-line-strong);
+}
+.columnList {
+  border-right: 1px solid var(--color-line-strong);
+}
+.columnList button {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-4);
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+  cursor: pointer;
+}
+.columnList button:hover {
+  background: var(--color-surface-soft);
+}
+.columnList .selectedColumn {
+  background: var(--color-surface-raised);
+  box-shadow: inset 0.25rem 0 0 var(--color-accent);
+}
+.columnList strong,
+.columnList small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.columnList small {
+  margin-top: var(--space-1);
+  color: var(--color-muted);
+}
+.ruleCount {
+  display: grid;
+  min-width: 1.7rem;
+  min-height: 1.7rem;
+  place-items: center;
+  color: var(--color-accent-strong);
+  background: var(--color-accent-soft);
+  border-radius: 50%;
+  font-size: var(--text-xs);
+  font-weight: 800;
+}
+.editor {
+  padding: clamp(1.25rem, 4vw, 3rem);
+  background: var(--color-surface-soft);
+}
+.editorHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-6);
+  align-items: end;
+  margin-bottom: var(--space-8);
+}
+.editorHeader p {
+  margin: 0 0 var(--space-1);
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.editorHeader h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+}
+.typeField,
+.stackField,
+.inlineField {
+  display: grid;
+  gap: var(--space-2);
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+select,
+textarea,
+input[type='number'] {
+  min-height: 2.75rem;
+  padding: 0.65rem 0.75rem;
+  color: var(--color-ink);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-control);
+  font: inherit;
+}
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+.ruleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  align-items: start;
+}
+.rule {
+  padding: var(--space-4);
+  border: 1px solid var(--color-line);
+  background: var(--color-surface-soft);
+}
+.ruleEnabled {
+  border-color: var(--color-accent);
+  background: var(--color-surface-raised);
+}
+.ruleToggle {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-3);
+  cursor: pointer;
+}
+.ruleToggle input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.15rem;
+  accent-color: var(--color-accent);
+}
+.ruleToggle strong,
+.ruleToggle small {
+  display: block;
+}
+.ruleToggle small {
+  margin-top: var(--space-1);
+  color: var(--color-muted);
+  line-height: 1.45;
+}
+.ruleOptions {
+  margin: var(--space-4) 0 0 1.85rem;
+}
+.inlineField {
+  grid-template-columns: minmax(7rem, 1fr) minmax(8rem, auto);
+  align-items: center;
+}
+.formatChoices {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+  border: 0;
+}
+.formatChoices legend {
+  margin-bottom: var(--space-2);
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+.formatChoices label {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  font-size: var(--text-sm);
+}
+.formatChoices input {
+  accent-color: var(--color-accent);
+}
+.fieldError {
+  margin: var(--space-3) 0 0;
+  color: var(--color-danger-strong);
+  font-size: var(--text-sm);
+}
+.errorSummary {
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  color: var(--color-danger-strong);
+  border-left: 0.25rem solid var(--color-danger);
+  background: var(--color-surface-raised);
+}
+.errorSummary p {
+  margin: var(--space-1) 0 0;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-6);
+  align-items: center;
+  padding-block: var(--space-6);
+}
+.footer > div:first-child {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+.footer svg {
+  color: var(--color-accent);
+}
+.footer p,
+.footer strong,
+.footer span {
+  display: block;
+  margin: 0;
+}
+.footer span {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+@media (max-width: 60rem) {
+  .ruleGrid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 48rem) {
+  .intro {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .ruleWorkbench {
+    grid-template-columns: 1fr;
+  }
+  .columnList {
+    display: flex;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-line-strong);
+  }
+  .columnList button {
+    min-width: 13rem;
+    border-right: 1px solid var(--color-line);
+    border-bottom: 0;
+  }
+  .columnList .selectedColumn {
+    box-shadow: inset 0 -0.25rem 0 var(--color-accent);
+  }
+}
+@media (max-width: 35rem) {
+  .sectionHeading,
+  .editorHeader,
+  .footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .sectionHeading {
+    display: flex;
+  }
+  .footer {
+    display: flex;
+  }
+  .actions {
+    display: grid;
+  }
+  .inlineField {
+    grid-template-columns: 1fr;
+  }
+  .formatChoices {
+    grid-template-columns: 1fr;
+  }
+}

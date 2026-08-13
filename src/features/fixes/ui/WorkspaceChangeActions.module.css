@@ -1,0 +1,40 @@
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-5);
+  align-items: center;
+  margin-top: 0;
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-ink-soft);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.actions p {
+  margin: 0 0 var(--space-1);
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+@media (max-width: 48rem) {
+  .actions {
+    display: grid;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .buttons button:last-child {
+    grid-column: 1 / -1;
+  }
+}

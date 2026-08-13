@@ -1,0 +1,12 @@
+dist
+node_modules
+coverage
+playwright-report
+test-results
+package-lock.json
+ARCHITECTURE.md
+DEVELOPMENT_PLAN.md
+FEATURES.md
+PRODUCT.md
+PROJECT_STATUS.md
+TECH_SPEC.md

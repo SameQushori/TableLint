@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">TableLint</title>
+  <desc id="description">Локальная проверка и очистка CSV</desc>
+  <rect width="1200" height="630" fill="#f2f2ef"/>
+  <path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200" stroke="#deded8"/>
+  <circle cx="1010" cy="120" r="240" fill="#ebe9ff"/>
+  <circle cx="120" cy="620" r="240" fill="#fae8ea" opacity=".7"/>
+  <g transform="translate(82 78)">
+    <rect width="88" height="88" rx="22" fill="#695de7"/>
+    <path d="M21 25h46M21 42h46M21 59h29M36 25v34M53 25v17" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <path d="m54 62 7 7 12-17" fill="none" stroke="#d9d5ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="194" y="142" fill="#24242d" font-family="Arial, sans-serif" font-size="54" font-weight="700">TableLint</text>
+  <text x="82" y="286" fill="#24242d" font-family="Arial, sans-serif" font-size="76" font-weight="700">CSV, готовый</text>
+  <text x="82" y="372" fill="#24242d" font-family="Arial, sans-serif" font-size="76" font-weight="700">к импорту.</text>
+  <text x="86" y="438" fill="#666772" font-family="Arial, sans-serif" font-size="28">Проверка, исправления и экспорт — локально в браузере.</text>
+  <g transform="translate(770 210)">
+    <rect width="340" height="250" rx="16" fill="#fff" stroke="#c9c9c2" stroke-width="2"/>
+    <path d="M0 58h340M0 106h340M0 154h340M0 202h340M76 0v250M180 0v250M270 0v250" stroke="#deded8"/>
+    <path d="M181 107h88v47h-88z" fill="#fae8ea"/>
+    <path d="M181 107v47" stroke="#c15c68" stroke-width="6"/>
+    <path d="m282 178 15 15 28-39" fill="none" stroke="#695de7" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+.root {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+}
+
+.value {
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.track {
+  height: 0.375rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--color-line);
+}
+
+.bar {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-accent);
+  transform-origin: left;
+  transition: width var(--motion-slow) var(--ease-standard);
+}
