@@ -7,6 +7,7 @@ import { AppErrorBoundary } from '@app/errors/AppErrorBoundary';
 import { store } from '@app/store/store';
 import { SessionPersistence } from '@features/session-recovery/ui/SessionPersistence';
 import { initializeTheme } from '@shared/lib/theme';
+import { LanguageProvider } from '@shared/lib/locale';
 import '@shared/styles/global.css';
 
 initializeTheme();
@@ -19,11 +20,13 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <AppErrorBoundary>
-      <Provider store={store}>
-        <SessionPersistence />
-        <AppRouter />
-      </Provider>
-    </AppErrorBoundary>
+    <LanguageProvider>
+      <AppErrorBoundary>
+        <Provider store={store}>
+          <SessionPersistence />
+          <AppRouter />
+        </Provider>
+      </AppErrorBoundary>
+    </LanguageProvider>
   </StrictMode>,
 );

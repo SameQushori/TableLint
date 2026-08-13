@@ -8,10 +8,12 @@ import {
   storeTheme,
   type ColorTheme,
 } from '@shared/lib/theme';
+import { useLanguage } from '@shared/lib/languageContext';
 
 import styles from './AppHeader.module.css';
 
 export function AppHeader() {
+  const { language, setLanguage } = useLanguage();
   const [theme, setTheme] = useState<ColorTheme>(
     () => getStoredTheme() ?? getSystemTheme(),
   );
@@ -42,6 +44,23 @@ export function AppHeader() {
           <div className={styles.privacy}>
             <ShieldCheck aria-hidden="true" />
             <span>Файлы остаются на устройстве</span>
+          </div>
+          <div
+            className={styles.languageSwitch}
+            aria-label="Выбор языка"
+            role="group"
+          >
+            {(['ru', 'en'] as const).map((option) => (
+              <button
+                aria-pressed={language === option}
+                className={styles.languageOption}
+                key={option}
+                onClick={() => setLanguage(option)}
+                type="button"
+              >
+                {option.toUpperCase()}
+              </button>
+            ))}
           </div>
           <button
             aria-label={

@@ -12,6 +12,7 @@ import {
 import { issuesReducer } from '@features/validation/model/issuesSlice';
 import { changesReducer } from '@features/fixes/model/changesSlice';
 import { workspaceUiReducer } from '@features/workspace/model/workspaceUiSlice';
+import { LanguageProvider } from '@shared/lib/locale';
 
 interface RenderWithAppOptions {
   route?: string;
@@ -33,8 +34,10 @@ export function renderWithApp(
   });
 
   return render(
-    <Provider store={store}>
-      <MemoryRouter initialEntries={[route]}>{element}</MemoryRouter>
-    </Provider>,
+    <LanguageProvider>
+      <Provider store={store}>
+        <MemoryRouter initialEntries={[route]}>{element}</MemoryRouter>
+      </Provider>
+    </LanguageProvider>,
   );
 }
