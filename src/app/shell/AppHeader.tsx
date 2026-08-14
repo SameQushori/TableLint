@@ -4,7 +4,6 @@ import { useState } from 'react';
 import {
   applyTheme,
   getStoredTheme,
-  getSystemTheme,
   storeTheme,
   type ColorTheme,
 } from '@shared/lib/theme';
@@ -15,7 +14,7 @@ import styles from './AppHeader.module.css';
 export function AppHeader() {
   const { language, setLanguage } = useLanguage();
   const [theme, setTheme] = useState<ColorTheme>(
-    () => getStoredTheme() ?? getSystemTheme(),
+    () => getStoredTheme() ?? 'light',
   );
 
   const toggleTheme = () => {

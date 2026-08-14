@@ -23,6 +23,7 @@ export function renderWithApp(
   element: ReactElement,
   { route = '/', workflow = initialWorkflowState }: RenderWithAppOptions = {},
 ) {
+  window.localStorage.setItem('tablelint-language', 'ru');
   const store = configureStore({
     reducer: {
       changes: changesReducer,

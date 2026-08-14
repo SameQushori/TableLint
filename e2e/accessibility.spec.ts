@@ -1,6 +1,12 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    window.localStorage.setItem('tablelint-language', 'ru');
+  });
+});
+
 async function openSampleWorkspace(page: import('@playwright/test').Page) {
   await page.goto('/');
   await page.getByRole('button', { name: 'Использовать пример' }).click();

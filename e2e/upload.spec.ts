@@ -1,6 +1,12 @@
 import { expect, test } from '@playwright/test';
 import Papa from 'papaparse';
 
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    window.localStorage.setItem('tablelint-language', 'ru');
+  });
+});
+
 async function readDownload(download: import('@playwright/test').Download) {
   const filePath = await download.path();
   if (!filePath) throw new Error('Downloaded file is unavailable.');

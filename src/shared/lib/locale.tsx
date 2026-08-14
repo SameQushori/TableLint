@@ -237,13 +237,13 @@ const englishByRussian: Readonly<Record<string, string>> = {
 };
 
 function readStoredLanguage(): AppLanguage {
-  if (typeof window === 'undefined') return 'ru';
+  if (typeof window === 'undefined') return 'en';
   try {
-    return window.localStorage.getItem(LANGUAGE_STORAGE_KEY) === 'en'
-      ? 'en'
-      : 'ru';
+    return window.localStorage.getItem(LANGUAGE_STORAGE_KEY) === 'ru'
+      ? 'ru'
+      : 'en';
   } catch {
-    return 'ru';
+    return 'en';
   }
 }
 

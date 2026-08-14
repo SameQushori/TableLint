@@ -3,7 +3,6 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   applyTheme,
   getStoredTheme,
-  getSystemTheme,
   initializeTheme,
   storeTheme,
 } from './theme';
@@ -24,14 +23,15 @@ describe('color theme', () => {
     expect(document.documentElement.style.colorScheme).toBe('dark');
   });
 
-  it('falls back to the system preference', () => {
+  it('defaults to light regardless of the system preference', () => {
     Object.defineProperty(window, 'matchMedia', {
       configurable: true,
       value: vi.fn().mockReturnValue({ matches: true }),
     });
 
-    expect(getSystemTheme()).toBe('dark');
-    expect(initializeTheme()).toBe('dark');
+    expect(initializeTheme()).toBe('light');
+    expect(document.documentElement.dataset.theme).toBe('light');
+    expect(document.documentElement.style.colorScheme).toBe('light');
   });
 
   it('applies light theme directly', () => {

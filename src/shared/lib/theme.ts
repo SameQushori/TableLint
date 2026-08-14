@@ -11,13 +11,6 @@ export function getStoredTheme(): ColorTheme | null {
   }
 }
 
-export function getSystemTheme(): ColorTheme {
-  return typeof window.matchMedia === 'function' &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
-}
-
 export function applyTheme(theme: ColorTheme) {
   document.documentElement.dataset.theme = theme;
   document.documentElement.style.colorScheme = theme;
@@ -32,7 +25,7 @@ export function storeTheme(theme: ColorTheme) {
 }
 
 export function initializeTheme(): ColorTheme {
-  const theme = getStoredTheme() ?? getSystemTheme();
+  const theme = getStoredTheme() ?? 'light';
   applyTheme(theme);
   return theme;
 }

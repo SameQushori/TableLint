@@ -19,37 +19,40 @@ describe('AppHeader theme switcher', () => {
     document.documentElement.style.colorScheme = 'light';
   });
 
-  it('toggles and persists the color theme', () => {
+  it('toggles and persists the color theme', async () => {
     renderHeader();
 
     fireEvent.click(
-      screen.getByRole('button', { name: 'Включить тёмную тему' }),
+      screen.getByRole('button', { name: 'Switch to dark theme' }),
     );
 
     expect(document.documentElement.dataset.theme).toBe('dark');
     expect(document.documentElement.style.colorScheme).toBe('dark');
     expect(window.localStorage.getItem('tablelint-color-theme')).toBe('dark');
     expect(
-      screen.getByRole('button', { name: 'Включить светлую тему' }),
+      await screen.findByRole('button', { name: 'Switch to light theme' }),
     ).toBeVisible();
   });
 
-  it('switches to English and persists the language', () => {
+  it('defaults to English and persists a language change', () => {
     renderHeader();
 
-    fireEvent.click(screen.getByRole('button', { name: 'EN' }));
-
     expect(document.documentElement.lang).toBe('en');
-    expect(window.localStorage.getItem('tablelint-language')).toBe('en');
     expect(screen.getByText('Files stay on your device')).toBeVisible();
     expect(
       screen.getByRole('button', { name: 'Switch to dark theme' }),
     ).toBeVisible();
-    expect(screen.getByRole('button', { name: 'RU' })).toHaveAttribute(
-      'aria-pressed',
-      'false',
-    );
     expect(screen.getByRole('button', { name: 'EN' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'RU' }));
+
+    expect(document.documentElement.lang).toBe('ru');
+    expect(window.localStorage.getItem('tablelint-language')).toBe('ru');
+    expect(screen.getByText('Файлы остаются на устройстве')).toBeVisible();
+    expect(screen.getByRole('button', { name: 'RU' })).toHaveAttribute(
       'aria-pressed',
       'true',
     );
